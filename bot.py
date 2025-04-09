@@ -13,7 +13,8 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 # creates the bot instance and sets the command prefix to /
-bot = commands.Bot(command_prefix=commands.when_mentioned_or("\\"), intents=intents)
+bot = commands.Bot(command_prefix=commands.when_mentioned_or("\\"), intents=intents, help_command=None)
+
 
 # this is where we add our extensions (cogs) to the bot to be loaded in the setup_hook function
 initial_extensions = ['cogs.fun', 'cogs.utility']
