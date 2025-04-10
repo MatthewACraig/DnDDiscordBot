@@ -1,1 +1,24 @@
 2025-04-09 17:48:42,144 - Shard ID None has connected to Gateway (Session ID: 6fb717ed150301aa27fcca164f736db1).
+2025-04-09 17:49:44,747 - Shard ID None has connected to Gateway (Session ID: 4fa67cc5ddaef71581d4b5e0f9af2375).
+2025-04-09 17:50:00,694 - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-09 17:50:07,095 - Model: wizardlm2:latest | Prompt: can you list all the basic class stuff that barbarians get from level 1 to 20 | Response:  Certainly! Here's a summary of the Barbarian class features from Level 1 to Level 20 in D&D 5e, based on the SRD:
+
+*Level 1:* Rage (including Unarmored Defense), Primal Champion, Ability Score Improvement.
+*Level 2:* Danger Sense.
+*Level 3:* Feral Instinct.
+*Level 4:* Constitution increases by 1.
+*Level 5:* Rage (enhanced).
+*Level 6:* Athlete (optional feature, replaces Danger Sense).
+*Level 7:* Dragon's Fury (replaces Feral Instinct at higher levels).
+*Level 8:* Wrath of the Primordial.
+*Level 9:* Constitution increases by another 1.
+*Level 10:* Rage (even more powerful).
+*Level 11:* Brave Heart (replaces Dragon's Fury at higher levels).
+*Level 12-20:* You gain one hit die for every odd-numbered level (13, 15, etc.), and your Ability Score Improvement option expands.
+
+Each Rage form (Level 5, Level 10, and Level 14) provides different benefits, and you have the option to take a different form of Rage at these levels. Additionally, every two levels above level 6, you gain another attack while raging. At level 18, you can use your action to enter a rage as many as you like, but no more than once per short or long rest. | Response Time: 6.61s | Average Response Time: 6.61s
+2025-04-09 17:54:23,865 - Shard ID None has connected to Gateway (Session ID: 5057f53bc256e068e4142ca8e48d16d8).
+2025-04-09 18:10:41,821 - Shard ID None has connected to Gateway (Session ID: 31d831a8fc1067873605c7a81df1dd9d).
+2025-04-09 18:12:35,610 - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-04-09 18:12:39,451 - Start Time: 2025-04-09 18:12:34 | End Time: 2025-04-09 18:12:39 | Model: wizardlm2:latest | Prompt: can you list me some dnd spells that bards have access to | Response: 5th Edition Dungeons & Dragons Bards have a diverse spell list, including cantrips like "Prestidigitation," "Vicious Mockery," and "Mage Hand," and spells ranging from 1st level like "Cure Wounds," "Healing Word," and "Bless" to higher levels with "Countercharm," "Song of Restoration," and "Greater Invisibility." They also have unique spells like "Vicious Mockery" that can be upgraded through their Subclass features. Remember, the exact spells available depend on the Bard's subclass (College of Lore, College of Valor, etc.). | Response Time: 5.23s | Average Response Time: 5.23s
+2025-04-09 18:12:39,451 - Start Time: 2025-04-09 18:12:34 | End Time: 2025-04-09 18:12:39 | Model: wizardlm2:latest | Prompt: can you list me some dnd spells that bards have access to | Response: 5th Edition Dungeons & Dragons Bards have a diverse spell list, including cantrips like "Prestidigitation," "Vicious Mockery," and "Mage Hand," and spells ranging from 1st level like "Cure Wounds," "Healing Word," and "Bless" to higher levels with "Countercharm," "Song of Restoration," and "Greater Invisibility." They also have unique spells like "Vicious Mockery" that can be upgraded through their Subclass features. Remember, the exact spells available depend on the Bard's subclass (College of Lore, College of Valor, etc.). | Response Time: 5.23s | Average Response Time: 5.23s

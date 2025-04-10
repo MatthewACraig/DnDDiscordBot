@@ -9,6 +9,7 @@ class Fun(commands.Cog):
     async def ping(self, ctx):
         """Responds with Pong!"""
         await ctx.send("Pong!")
+         
 
     @commands.command(name="roll")
     async def roll(self, ctx):

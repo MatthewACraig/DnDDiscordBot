@@ -1,22 +1,11 @@
 # this lets ollama use my GPU because good lord is it faster than my CPU
 import os
-import logging
+os.environ["OLLAMA_NUM_THREADS"] = "0"
+
 import asyncio
 from discord.ext import commands
 from ollama import generate
 import time
-
-# Configure logging
-logging.basicConfig(
-    filename="ollama_logs.log",  # log file name
-    level=logging.INFO,          # log level
-    format="%(asctime)s - %(message)s"  # log format
-)
-
-# Global variable to track total response time and number of responses
-total_response_time = 0
-response_count = 0
-
 
 def generateOllamaResponse(userPrompt):
     """Blocking function to generate a response using Ollama."""
@@ -38,17 +27,18 @@ def generateOllamaResponse(userPrompt):
 class Ollama(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
+        
+    
     @commands.Cog.listener()
     async def on_message(self, message):
-        global total_response_time, response_count
 
         # Ignore messages from the bot itself
         if message.author == self.bot.user:
             return
-
-        # Check if the bot is mentioned or "dnd" is in the message content
-        if self.bot.user in message.mentions or "dnd" or "class" or "spell" or "attack" in message.content.lower():
+        
+        # Check if the bot is mentioned one of the trigger words
+        triggerWords: list = ["dnd", "spell", "spells", "class"]
+        if self.bot.user in message.mentions or any(word in message.content.lower() for word in triggerWords):
             # Remove the mention from the message content (if present)
             user_message = message.content.replace(f"<@{self.bot.user.id}>", "").strip()
 
@@ -58,29 +48,15 @@ class Ollama(commands.Cog):
 
             # Log that the bot is generating a response
             print(f"Generating a response for: {user_message}")
-            start_time = time.time()
-
+            startTime: time = time.time()
+            
             # Run the blocking generate function in a separate thread
             try:
                 response = await asyncio.to_thread(generateOllamaResponse, user_message)
                 await message.channel.send(response)
                 print('Response sent successfully.')
-
-                # Calculate response time
-                response_time = time.time() - start_time
-                total_response_time += response_time
-                response_count += 1
-                average_response_time = total_response_time / response_count
-
-                # Log the details
-                logging.info(
-                    f"Model: wizardlm2:latest | Prompt: {user_message} | Response: {response} | "
-                    f"Response Time: {response_time:.2f}s | Average Response Time: {average_response_time:.2f}s"
-                )
-
-                # Print the average response time to the console
-                print(f"Average Response Time: {average_response_time:.2f}s")
-
+                print(f"Response time: {time.time() - startTime:.2f} seconds")
+           
             except Exception as e:
                 print(f"Error generating response: {e}")
                 await message.channel.send("Sorry, I couldn't process your request.")

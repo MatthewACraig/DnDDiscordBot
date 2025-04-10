@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 
 # loads our token from our environment variable
+# use an environment file later 
 TOKEN = os.getenv('DND_BOT_PUBLIC_KEY')
 
 
